@@ -2,7 +2,6 @@ const VSHADER_SOURCE =
     `attribute vec4 a_position;\n
 void main(){\n 
     gl_Position=a_position; \n
-    gl_PointSize=10.0;\n
 }`;
 
 const FSHADER_SOURCE =
@@ -34,7 +33,7 @@ function drawTriangle(gl, program, points) {
     gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(pos);
 
-    gl.drawArrays(gl.POINTS, 0, 3);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
 }
 
 function createAroundPoints(point) {
